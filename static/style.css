@@ -19,6 +19,9 @@
     --purple-100: hsl(275 100% 97%);
     --violet-600: hsl(281 83% 54%);
 
+    /* Font family */
+    --work-sans: "Work Sans", Tahoma, sans-serif;
+
     /* Font sizes */
     --h1-font-size: clamp(2rem, 6.1069vw + .5687rem, 3.5rem);
     --h2-font-size: clamp(1rem, .5089vw + .8807rem, 1.125rem);
@@ -52,6 +55,7 @@
 
 body {
     min-height: 100vh;
+    font-family: var(--work-sans);
 }
 
 button {
