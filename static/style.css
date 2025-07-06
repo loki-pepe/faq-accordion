@@ -18,6 +18,27 @@
     --purple-600: hsl(292 16% 49%);
     --purple-100: hsl(275 100% 97%);
     --violet-600: hsl(281 83% 54%);
+
+    /* Font sizes */
+    --h1-font-size: clamp(2rem, 6.1069vw + .5687rem, 3.5rem);
+    --h2-font-size: clamp(1rem, .5089vw + .8807rem, 1.125rem);
+    --p-font-size: clamp(.875rem, .5089vw + .7557rem, 1rem);
+
+    /* Line heights */
+    --body-line-height: auto;
+    --p-line-height: 1.5;
+
+    /* Letter spacing */
+    --body-letter-spacing: 0;
+
+    /* Font weights */
+    --bold: 700;
+    --semi-bold: 600;
+    --regular: 400;
+
+    --h1-font-weight: var(--bold);
+    --h2-font-weight: var(--semi-bold);
+    --p-font-weight: var(--regular);
 }
 
 *, *::before, *::after {
