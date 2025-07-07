@@ -103,6 +103,17 @@ body {
     padding: var(--body-padding);
 }
 
+body::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    height: clamp(232px, 22.3919vw + 148.0305px, 320px);
+    width: 101%;
+    background: var(--background-pattern) top/cover no-repeat;
+}
+
 button {
     display: block;
     font-size: inherit;
