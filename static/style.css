@@ -18,6 +18,20 @@
     --purple-600: hsl(292 16% 49%);
     --purple-100: hsl(275 100% 97%);
     --violet-600: hsl(281 83% 54%);
+    --violet-shadow: hsl(281 100% 23% 0.1);
+
+    /* Color settings */
+    --body-background-color: var(--purple-100);
+    --body-color: var(--purple-950);
+    --border-color: var(--purple-100);
+    --main-background-color: var(--white);
+    --p-color: var(--purple-600);
+
+    /* Images */
+    --background-pattern: url("../assets/images/background-pattern-desktop.svg");
+    --h1-icon: url("../assets/images/icon-star.svg");
+    --open-icon: url("../assets/images/icon-plus.svg");
+    --close-icon: url("../assets/images/icon-minus.svg");
 
     /* Font family */
     --work-sans: "Work Sans", Tahoma, sans-serif;
@@ -42,6 +56,9 @@
     --h1-font-weight: var(--bold);
     --h2-font-weight: var(--semi-bold);
     --body-font-weight: var(--regular);
+
+    /* Shadow */
+    --main-shadow: 0 32px 56px 0 var(--violet-shadow);
 }
 
 *, *::before, *::after {
@@ -60,6 +77,8 @@ body {
     letter-spacing: var(--body-letter-spacing);
     font-weight: var(--body-font-weight);
     font-size: var(--body-font-size);
+    background: var(--body-background-color);
+    color: var(--body-color);
 }
 
 button {
@@ -83,6 +102,16 @@ img, svg {
     max-width: 100%;
 }
 
+li:not(li:last-child) {
+    border-block-end: 1px solid var(--border-color);
+}
+
+main {
+    background-color: var(--main-background-color);
+    box-shadow: var(--main-shadow);
+}
+
 p {
     line-height: var(--p-line-height);
+    color: var(--p-color);
 }
