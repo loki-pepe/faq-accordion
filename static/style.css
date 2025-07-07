@@ -21,7 +21,7 @@
     --purple-600: hsl(292 16% 49%);
     --purple-100: hsl(275 100% 97%);
     --violet-600: hsl(281 83% 54%);
-    --violet-shadow: hsl(281 100% 23% 0.1);
+    --violet-shadow: hsl(281 100% 23% / 0.1);
 
     /* Color settings */
     --body-background-color: var(--purple-100);
@@ -74,6 +74,7 @@
     --main-shadow: 0 32px 56px 0 var(--violet-shadow);
 
     /* Sizing */
+    --background-pattern-height: clamp(232px, 22.3919vw + 148.0305px, 320px);
     --h1-icon-size: clamp(21px, 3.5623vw + 7.6412px, 35px);
     --h2-height: 30px;
     --toggle-button-size: 1.52375rem;
@@ -109,7 +110,7 @@ body::before {
     position: absolute;
     top: 0;
     z-index: -1;
-    height: clamp(232px, 22.3919vw + 148.0305px, 320px);
+    height: var(--background-pattern-height);
     width: 101%;
     background: var(--background-pattern) top/cover no-repeat;
 }
