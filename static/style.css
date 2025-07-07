@@ -196,6 +196,10 @@ p {
     margin-block-start: var(--p-margin-top);
 }
 
+.closed p {
+    display: none;
+}
+
 .toggle {
     width: var(--toggle-button-size);
     height: var(--toggle-button-size);
