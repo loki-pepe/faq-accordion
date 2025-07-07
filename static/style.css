@@ -29,6 +29,7 @@
     --border-color: var(--purple-100);
     --main-background-color: var(--white);
     --p-color: var(--purple-600);
+    --hover-color: var(--violet-600);
 
     /* Images */
     --background-pattern: url("../assets/images/background-pattern-desktop.svg");
@@ -119,6 +120,7 @@ button {
     display: block;
     font-size: inherit;
     font-family: inherit;
+    cursor: pointer;
 }
 
 h1 {
@@ -141,6 +143,13 @@ h1::before {
 h2 {
     font-size: var(--h2-font-size);
     font-weight: var(--h2-font-weight);
+    cursor: pointer;
+}
+
+@media (hover: hover) {
+    h2:hover {
+        color: var(--hover-color);
+    }
 }
 
 .h2-container {
