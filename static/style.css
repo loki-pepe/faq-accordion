@@ -187,7 +187,7 @@ main {
     padding: var(--main-padding);
     background-color: var(--main-background-color);
     box-shadow: var(--main-shadow);
-    border-radius: var(--main-border-radius)
+    border-radius: var(--main-border-radius);
 }
 
 p {
