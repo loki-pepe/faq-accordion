@@ -25,7 +25,7 @@
     /* Font sizes */
     --h1-font-size: clamp(2rem, 6.1069vw + .5687rem, 3.5rem);
     --h2-font-size: clamp(1rem, .5089vw + .8807rem, 1.125rem);
-    --p-font-size: clamp(.875rem, .5089vw + .7557rem, 1rem);
+    --body-font-size: clamp(.875rem, .5089vw + .7557rem, 1rem);
 
     /* Line heights */
     --body-line-height: auto;
@@ -41,7 +41,7 @@
 
     --h1-font-weight: var(--bold);
     --h2-font-weight: var(--semi-bold);
-    --p-font-weight: var(--regular);
+    --body-font-weight: var(--regular);
 }
 
 *, *::before, *::after {
@@ -56,6 +56,10 @@
 body {
     min-height: 100vh;
     font-family: var(--work-sans);
+    line-height: var(--body-line-height);
+    letter-spacing: var(--body-letter-spacing);
+    font-weight: var(--body-font-weight);
+    font-size: var(--body-font-size);
 }
 
 button {
@@ -63,8 +67,22 @@ button {
     font-size: inherit;
     font-family: inherit;
 }
+
+h1 {
+    font-size: var(--h1-font-size);
+    font-weight: var(--h1-font-weight);
+}
+
+h2 {
+    font-size: var(--h2-font-size);
+    font-weight: var(--h2-font-weight);
+}
   
 img, svg {
     display: block;
     max-width: 100%;
+}
+
+p {
+    line-height: var(--p-line-height);
 }
