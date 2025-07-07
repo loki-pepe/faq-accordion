@@ -62,6 +62,7 @@
 
     /* Sizing */
     --h1-icon-size: clamp(21px, 3.5623vw + 7.6412px, 35px);
+    --toggle-button-size: 1.52375rem;
 }
 
 *, *::before, *::after {
@@ -119,6 +120,12 @@ li:not(li:last-child) {
     border-block-end: 1px solid var(--border-color);
 }
 
+li > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
 main {
     background-color: var(--main-background-color);
     box-shadow: var(--main-shadow);
@@ -127,4 +134,19 @@ main {
 p {
     line-height: var(--p-line-height);
     color: var(--p-color);
+}
+
+.toggle {
+    width: var(--toggle-button-size);
+    height: var(--toggle-button-size);
+    border: none;
+    background: center/contain no-repeat;
+}
+
+.open .toggle {
+    background-image: var(--close-icon);
+}
+
+.closed .toggle {
+    background-image: var(--open-icon);
 }
