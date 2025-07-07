@@ -59,6 +59,9 @@
 
     /* Shadow */
     --main-shadow: 0 32px 56px 0 var(--violet-shadow);
+
+    /* Sizing */
+    --h1-icon-size: clamp(21px, 3.5623vw + 7.6412px, 35px);
 }
 
 *, *::before, *::after {
@@ -90,6 +93,16 @@ button {
 h1 {
     font-size: var(--h1-font-size);
     font-weight: var(--h1-font-weight);
+    display: flex;
+    align-items: center;
+}
+
+h1::before {
+    content: "";
+    display: block;
+    width: var(--h1-icon-size);
+    height: var(--h1-icon-size);
+    background: var(--h1-icon) center/contain no-repeat;
 }
 
 h2 {
