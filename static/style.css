@@ -116,7 +116,7 @@ body::before {
     top: 0;
     z-index: -1;
     height: var(--background-pattern-height);
-    width: 101%;
+    width: 100%;
     background: var(--background-pattern) top/cover no-repeat;
 }
 
