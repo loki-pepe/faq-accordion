@@ -218,3 +218,9 @@ p {
 ul {
     list-style: none;
 }
+
+@media (prefers-reduced-motion: reduce) {
+    p {
+        transition: none;
+    }
+}
