@@ -29,7 +29,7 @@ async function getParagraphHeight() {
     let maxHeight = 0;
     for (const p of paragraphs) {
         temp.textContent = p.textContent;
-        let height = parseFloat(getComputedStyle(temp).getPropertyValue("height").replace("px", ""));
+        const height = parseFloat(getComputedStyle(temp).getPropertyValue("height").replace("px", ""));
         maxHeight = Math.max(maxHeight, height);
     }
 
