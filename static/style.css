@@ -78,6 +78,7 @@
     --background-pattern-height: clamp(232px, 22.3919vw + 148.0305px, 320px);
     --h1-icon-size: clamp(21px, 3.5623vw + 7.6412px, 35px);
     --h2-height: 30px;
+    --main-max-width: 37.5rem;
     --toggle-button-size: 1.52375rem;
     --p-height: auto;
 
@@ -175,7 +176,7 @@ li:not(li:last-child) {
 }
 
 main {
-    flex: 0 1 600px;
+    flex: 0 1 var(--main-max-width);
     min-width: 320px;
     padding: var(--main-padding);
     padding-block-end: calc(var(--main-padding) - var(--h2-container-margin-block));
