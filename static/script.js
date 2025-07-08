@@ -12,11 +12,8 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Dynamically set accordion paragraph heights to the height of the tallest paragraph
-    window.addEventListener("load", () => {
-        requestAnimationFrame(() => {
-            document.querySelector(':root').style.setProperty("--p-height", getParagraphHeight());
-        });
-    });
+    window.addEventListener("load", setParagraphHeight);
+    window.addEventListener("resize", setParagraphHeight);
 });
 
 
@@ -45,6 +42,12 @@ function openElement(targetElement) {
         element.classList.replace("open", "closed");
     }
     targetElement.classList.replace("closed", "open");
+}
+
+function setParagraphHeight() {
+    requestAnimationFrame(() => {
+        document.querySelector(':root').style.setProperty("--p-height", getParagraphHeight());
+    });
 }
 
 function toggleElement(e) {
