@@ -17,8 +17,9 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 
-function getParagraphHeight() {
+async function getParagraphHeight() {
     let maxHeight = 0;
+    document.querySelector(':root').style.setProperty("--p-height", "auto");
 
     for (const p of paragraphs) {
         let temp = document.createElement("p");
@@ -29,7 +30,7 @@ function getParagraphHeight() {
         temp.style.width = getComputedStyle(p).getPropertyValue("width");
 
         body.appendChild(temp);
-        height = parseFloat(getComputedStyle(temp).getPropertyValue("height").replace("px", ""));
+        let height = parseFloat(getComputedStyle(temp).getPropertyValue("height").replace("px", ""));
         body.removeChild(temp);
 
         maxHeight = Math.max(maxHeight, height);
@@ -46,7 +47,9 @@ function openElement(targetElement) {
 
 function setParagraphHeight() {
     requestAnimationFrame(() => {
-        document.querySelector(':root').style.setProperty("--p-height", getParagraphHeight());
+        getParagraphHeight().then(height => {
+            document.querySelector(':root').style.setProperty("--p-height", height);
+        })
     });
 }
 
