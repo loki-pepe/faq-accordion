@@ -18,23 +18,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 async function getParagraphHeight() {
-    let maxHeight = 0;
     document.documentElement.style.setProperty("--p-height", "auto");
 
+    const temp = document.createElement("p");
+    temp.style.visibility = "hidden";
+    temp.style.position = "fixed";
+    temp.style.width = getComputedStyle(paragraphs[0]).getPropertyValue("width");
+    body.appendChild(temp);
+
+    let maxHeight = 0;
     for (const p of paragraphs) {
-        let temp = document.createElement("p");
-
         temp.textContent = p.textContent;
-        temp.style.visibility = "hidden";
-        temp.style.position = "fixed";
-        temp.style.width = getComputedStyle(p).getPropertyValue("width");
-
-        body.appendChild(temp);
         let height = parseFloat(getComputedStyle(temp).getPropertyValue("height").replace("px", ""));
-        body.removeChild(temp);
-
         maxHeight = Math.max(maxHeight, height);
     }
+
+    body.removeChild(temp);
     return `${maxHeight}px`;
 }
 
