@@ -1,4 +1,6 @@
 const accordionElements = document.querySelectorAll("li");
+const body = document.querySelector("body");
+const paragraphs = document.querySelectorAll("p");
 
 document.addEventListener("DOMContentLoaded", () => {
     for (const element of accordionElements) {
@@ -8,9 +10,35 @@ document.addEventListener("DOMContentLoaded", () => {
         toggleButton.addEventListener("click", toggleElement);
         elementHeading.addEventListener("click", toggleElement);
     }
+
+    // Dynamically set accordion paragraph heights to the height of the tallest paragraph
+    window.addEventListener("load", () => {
+        requestAnimationFrame(() => {
+            document.querySelector(':root').style.setProperty("--p-height", getParagraphHeight());
+        });
+    });
 });
 
 
+function getParagraphHeight() {
+    let maxHeight = 0;
+
+    for (const p of paragraphs) {
+        let temp = document.createElement("p");
+
+        temp.textContent = p.textContent;
+        temp.style.visibility = "hidden";
+        temp.style.position = "fixed";
+        temp.style.width = getComputedStyle(p).getPropertyValue("width");
+
+        body.appendChild(temp);
+        height = parseFloat(getComputedStyle(temp).getPropertyValue("height").replace("px", ""));
+        body.removeChild(temp);
+
+        maxHeight = Math.max(maxHeight, height);
+    }
+    return `${maxHeight}px`;
+}
 
 function openElement(targetElement) {
     for (const element of accordionElements) {
