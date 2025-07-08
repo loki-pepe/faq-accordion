@@ -86,6 +86,12 @@
     --transition-time: 0.4s;
 }
 
+@media (prefers-reduced-motion: reduce) {
+    :root {
+        --transition-time: 0s;
+    }
+}
+
 *, *::before, *::after {
     box-sizing: border-box;
 }
