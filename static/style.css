@@ -67,9 +67,9 @@
     --body-padding: var(--default-spacing);
     --main-padding: clamp(24px, 4.0712vw + 8.7328px, 40px);
     --main-gap: clamp(24px, 2.0356vw + 16.3664px, 32px);
-    --li-padding-block: var(--default-spacing);
-    --p-margin-top: var(--default-spacing);
     --h1-gap: var(--default-spacing);
+    --h2-container-margin-block: var(--default-spacing);
+    --p-container-margin-block: var(--default-spacing);
 
     /* Shadow */
     --main-shadow: 0 32px 56px 0 var(--violet-shadow);
@@ -79,6 +79,10 @@
     --h1-icon-size: clamp(21px, 3.5623vw + 7.6412px, 35px);
     --h2-height: 30px;
     --toggle-button-size: 1.52375rem;
+    --p-height: auto;
+
+    /* Transition */
+    --transition-time: 0.4s;
 }
 
 *, *::before, *::after {
@@ -158,23 +162,12 @@ h2 {
     gap: 2rem;
     align-items: center;
     justify-content: space-between;
+    margin-block: var(--h2-container-margin-block) 0;
 }
   
 img, svg {
     display: block;
     max-width: 100%;
-}
-
-li {
-    padding-block: var(--li-padding-block);
-}
-
-li:first-child {
-    padding-block-start: 0;
-}
-
-li:last-child {
-    padding-block-end: 0;
 }
 
 li:not(li:last-child) {
@@ -185,6 +178,7 @@ main {
     flex: 0 1 600px;
     min-width: 320px;
     padding: var(--main-padding);
+    padding-block-end: calc(var(--main-padding) - var(--h2-container-margin-block));
     background-color: var(--main-background-color);
     box-shadow: var(--main-shadow);
     border-radius: var(--main-border-radius);
@@ -193,11 +187,15 @@ main {
 p {
     line-height: var(--p-line-height);
     color: var(--p-color);
-    margin-block-start: var(--p-margin-top);
+    overflow: hidden;
+    height: var(--p-height);
+    margin-block: var(--p-container-margin-block);
+    transition: height var(--transition-time), margin var(--transition-time);
 }
 
 .closed p {
-    display: none;
+    height: 0;
+    margin-block-end: 0;
 }
 
 .toggle {
